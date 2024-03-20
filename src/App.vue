@@ -1,11 +1,9 @@
 <template>
   <v-app>
-    <v-main>
-      <router-view />
-    </v-main>
+    <layout />
   </v-app>
 </template>
 
 <script setup>
-  //
+import layout from '@/layout/index.vue'
 </script>

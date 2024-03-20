@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
+    "axios": "^1.6.8",
+    "cheerio": "1.0.0-rc.12",
     "core-js": "^3.36.0",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "roboto-fontface": "^0.10.0",
     "vue": "^3.4.21",
     "vuetify": "^3.5.9"

@@ -14,7 +14,7 @@ export default defineConfig({
   plugins: [
     VueRouter(),
     Vue({
-      template: { transformAssetUrls }
+      template: { transformAssetUrls },
     }),
     // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
     Vuetify({
@@ -36,7 +36,7 @@ export default defineConfig({
   define: { 'process.env': {} },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
     extensions: [
       '.js',
@@ -50,5 +50,12 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000', // 将API请求代理到8000端口
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''), // 重写路径，将/api去掉
+      },
+    },
   },
 })
